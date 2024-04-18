@@ -22,23 +22,53 @@ def value_y(a, b, c, x):
 
 
 def to_string(a, b, c):
-    quadratic = ""
-    linear = ""
-    if a != 0:
-        quadratic = f" {a} * X^2 +"
-    if b != 0:
-        linear = f" {b} * X +"
-    return f"f(x) ={quadratic}{linear} {c}"
+    # easy try
+
+    eq = "f(x) ="
+    if a == 0 and b == 0:
+        return eq + f" {c}"
+    elif a == 0 and b != 0 and c == 0:
+        return eq + f" {b} * X "
+    elif a == 0 and b != 0 and c != 0:
+        return eq + f" {b} * X + {c}"
+    elif a != 0 and b == 0 and c == 0:
+        return eq + f" {a} * X^2"
+    elif a != 0 and b == 0 and c != 0:
+        return eq + f" {a} * X^2 + {c}"
+    elif a != 0 and b != 0 and c == 0:
+        return eq + f" {a} * X^2 + {b} * X"
+    elif a != 0 and b != 0 and c != 0:
+        return eq + f" {a} * X^2 + {b} * X + {c}"
+    # another try
+    # quadratic = ""
+    # linear = ""
+    # if a != 0:
+    #     quadratic = f" {a} * X^2 +"
+    # if b != 0:
+    #     linear = f" {b} * X +"
+    # return f"f(x) ={quadratic}{linear} {c}"
 
 
 def derivation(a, b, c):
-    quadratic = ""
-    linear = ""
-    if a != 0:
-        quadratic = f" {2*a} * X"
-        if b != 0:
-            quadratic += " +"
-            linear = f" {b}"
+    # easy try
+    eq = "f'(x) ="
+    if a == 0 and b== 0:
+        return eq + " 0"
+    elif a == 0 and b != 0:
+        return eq + f" {b}"
+    elif a != 0 and b == 0:
+        return eq + f" {a * 2} * X"
     else:
-        linear = f" {b}"
-    return f"f'(x) ={quadratic}{linear}"
+        return eq + f" {a * 2} * X + {b}"
+
+    # another try
+    # quadratic = ""
+    # linear = ""
+    # if a != 0:
+    #     quadratic = f" {2*a} * X"
+    #     if b != 0:
+    #         quadratic += " +"
+    #         linear = f" {b}"
+    # else:
+    #     linear = f" {b}"
+    # return f"f'(x) ={quadratic}{linear}"
