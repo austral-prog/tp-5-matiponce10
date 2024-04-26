@@ -12,5 +12,5 @@ def to_string(a, b, c):
     return "ANSWER HERE"
 
 
-def derivation(a, b):
+def derivation(a, b, c):
     return "ANSWER HERE"
